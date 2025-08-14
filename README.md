@@ -1,19 +1,28 @@
-# Bot de Repassar Mensagens do Telegram
+# 🤖 Bot Repassador
 
-Este bot repassa mensagens de um grupo/canal do Telegram para outros destinos automaticamente.
-
-## 🚀 Como usar no Railway
-
-1. Crie uma conta no [Railway](https://railway.app/).
-2. Clique no botão abaixo para fazer o deploy:
-
-[![Deploy on Railway]- [![Implantar na ferrovia](https://railway.app/button.svg)](https://railway.app/new/template?template=https://github.com/souzasantos803-cyber/bot_repassador&envs=TOKEN,DESTINOS,USUARIOS_IGNORADOS,TIPO_PERMITIDO&envDescs=TOKEN%20do%20bot%20Telegram,DESTINOS%20(separados%20por%20vírgula)%20onde%20as%20mensagens%20serão%20enviadas,IDs%20de%20usuários%20a%20ignorar%20(separados%20por%20vírgula),Tipos%20permitidos%20de%20mensagem&envs=TOKEN,DESTINOS,USUARIOS_IGNORADOS,TIPO_PERMITIDO&envDescs=Token%20do%20bot%20Telegram,IDs%20dos%20destinos%20separados%20por%20vírgula,IDs%20dos%20usuários%20a%20ignorar%20(separados%20por%20vírgula),Tipos%20permitidos%20(ex:%20podem%20ser%20texto%20ou%20texto%20com%20foto))template=SEU_REPOSITORIO_AQUI&envs=TOKEN,DESTINOS,USUARIOS_IGNORAR,TIPO_PERMITIDO&desc=Token+do+bot+do+Telegram+e+IDs+dos+destinos+separados+por+vírgula&USUARIOS_IGNORAR=IDs+dos+usuários+para+ignorar&TIPO_PERMITIDO=Tipos+permitidos+(ex:+Podem+ser+%27todos%27+ou+%27texto%27))
+Este bot do Telegram repassa mensagens de usuários ou grupos para destinos configurados.
 
 ---
 
-## 🌱 Variáveis de Ambiente no Railway
+## 🚀 Deploy no Railway
 
-- TOKEN: Token do bot fornecido pelo BotFather.
-- DESTINOS: IDs de destino separados por vírgula.
-- USUARIOS_IGNORAR: IDs de usuários que serão ignorados.
-- TIPO_PERMITIDO: Tipos de mensagens permitidas (ex.: todos, `texto`).
+Clique no botão abaixo para implantar automaticamente no [Railway](https://railway.app):
+
+[![Implantar na ferrovia](https://railway.app/button.svg)](https://railway.app/new/template?template=https://github.com/souzasantos803-cyber/bot_repassador&envs=TOKEN,DESTINOS,USUARIOS_IGNORADOS,TIPO_PERMITIDOS&TOKENDesc=Token%20do%20bot%20do%20Telegram&DESTINOSDesc=IDs%20dos%20destinos%20(separados%20por%20v%C3%ADrgula)&USUARIOS_IGNORADOSDesc=IDs%20dos%20usu%C3%A1rios%20para%20ignorar%20(separados%20por%20v%C3%ADrgula)&TIPO_PERMITIDOSDesc=Tipos%20de%20mensagem%20permitidos%20(ex:%20texto,%20%C3%A1udio,%20etc))
+
+---
+
+## 🔧 Variáveis de Ambiente
+
+- `TOKEN` → Token do bot do Telegram (fornecido pelo [BotFather](https://t.me/BotFather))
+- `DESTINOS` → IDs de chat ou grupos para onde repassar mensagens (separados por vírgula)
+- `USUARIOS_IGNORADOS` → IDs de usuários que serão ignorados (opcional)
+- `TIPO_PERMITIDOS` → Tipos de mensagens permitidas (ex.: `texto,audio,video`)
+
+---
+
+## 💻 Rodar Localmente
+
+```bash
+pip install python-telegram-bot==20.3 python-dotenv
+python bot_repassador.py
